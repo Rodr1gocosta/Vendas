@@ -10,11 +10,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/api/clientes")
 public class ClienteController {
@@ -24,7 +25,7 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteDTO> save(@Validated @RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> save(@RequestBody ClienteDTO clienteDTO) {
         log.info("Solicitação REST para salvar Cliente {}", clienteDTO);
 
         ClienteDTO result = clienteService.save(clienteDTO);

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-10T20:12:02-0300",
+    date = "2023-04-10T23:47:44-0300",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 20 (Oracle Corporation)"
 )
 @Component
@@ -23,6 +23,14 @@ public class ClienteMapperImpl implements ClienteMapper {
 
         Cliente cliente = new Cliente();
 
+        cliente.setId( dto.getId() );
+        cliente.setNome( dto.getNome() );
+        cliente.setSexo( dto.getSexo() );
+        cliente.setTelefone( dto.getTelefone() );
+        cliente.setCpfEcnpj( dto.getCpfEcnpj() );
+        cliente.setEndereco( dto.getEndereco() );
+        cliente.setTipoPessoa( dto.getTipoPessoa() );
+
         return cliente;
     }
 
@@ -33,6 +41,14 @@ public class ClienteMapperImpl implements ClienteMapper {
         }
 
         ClienteDTO clienteDTO = new ClienteDTO();
+
+        clienteDTO.setId( entity.getId() );
+        clienteDTO.setNome( entity.getNome() );
+        clienteDTO.setSexo( entity.getSexo() );
+        clienteDTO.setTelefone( entity.getTelefone() );
+        clienteDTO.setCpfEcnpj( entity.getCpfEcnpj() );
+        clienteDTO.setEndereco( entity.getEndereco() );
+        clienteDTO.setTipoPessoa( entity.getTipoPessoa() );
 
         return clienteDTO;
     }
@@ -69,6 +85,28 @@ public class ClienteMapperImpl implements ClienteMapper {
     public void partialUpdate(Cliente entity, ClienteDTO dto) {
         if ( dto == null ) {
             return;
+        }
+
+        if ( dto.getId() != null ) {
+            entity.setId( dto.getId() );
+        }
+        if ( dto.getNome() != null ) {
+            entity.setNome( dto.getNome() );
+        }
+        if ( dto.getSexo() != null ) {
+            entity.setSexo( dto.getSexo() );
+        }
+        if ( dto.getTelefone() != null ) {
+            entity.setTelefone( dto.getTelefone() );
+        }
+        if ( dto.getCpfEcnpj() != null ) {
+            entity.setCpfEcnpj( dto.getCpfEcnpj() );
+        }
+        if ( dto.getEndereco() != null ) {
+            entity.setEndereco( dto.getEndereco() );
+        }
+        if ( dto.getTipoPessoa() != null ) {
+            entity.setTipoPessoa( dto.getTipoPessoa() );
         }
     }
 }
