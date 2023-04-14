@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgresql:
+    extends:
+      file: src/main/docker/postgresql.yml
+      service: vendas
+    container_name: vendas
+volumes:
+  db-data:
+    external: false
+
+
