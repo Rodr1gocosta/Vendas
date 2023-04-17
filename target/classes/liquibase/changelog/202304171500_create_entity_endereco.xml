@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        create the entity Endereco.
+    -->
+    <changeSet id="202304171500-1" author="rodrigo.costa">
+        <createTable tableName="endereco">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="logradouro" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="numero" type="varchar(15)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cidade" type="varchar(55)">
+                <constraints nullable="false" />
+            </column>
+            <column name="uf" type="char(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cep" type="varchar(55)">
+                <constraints nullable="true" />
+            </column>
+            <column name="bairro" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="complemento" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--
+    sequence the entity Endereço.
+    -->
+    <changeSet  author="202304171500-2"  id="rodrigo.costa">
+        <createSequence  dataType="int" incrementBy="1" startValue="50" sequenceName="endereco_sequence"/>
+    </changeSet>
+
+</databaseChangeLog>

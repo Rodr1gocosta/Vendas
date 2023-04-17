@@ -6,6 +6,6 @@ services:
     volumes:
       - ~/volumes/postgres/vendas/postgresql/:/var/lib/postgresql/data/
     environment:
-      POSTGRES_PASSWORD: root
+      - POSTGRES_PASSWORD=root
     ports:
       - 127.0.0.1:5432:5432

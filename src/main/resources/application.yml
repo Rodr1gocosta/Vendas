@@ -1,12 +1,27 @@
+#===============================================================
+#conexão h2 banco em memória.
+#spring:
+#    datasource:
+#        driverClassName: org.h2.Driver
+#        password: ''
+#        url: jdbc:h2:mem:testdb
+#        username: sa
+#    h2:
+#        console:
+#            enabled: true
+#            path: /h2-console
+#    jpa:
+#        database-platform: org.hibernate.dialect.H2Dialect
+#===============================================================
+
 spring:
     datasource:
-        driverClassName: org.h2.Driver
-        password: ''
-        url: jdbc:h2:mem:testdb
-        username: sa
-    h2:
-        console:
-            enabled: true
-            path: /h2-console
+        driverClassName: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+        password: root
     jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        open-in-view: false
+    liquibase:
+        change-log: liquibase/master.xml

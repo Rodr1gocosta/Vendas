@@ -1,6 +1,7 @@
 package com.rodrigo.vendas.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,7 +13,8 @@ public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "enderecoSequence")
+    @SequenceGenerator(name = "enderecoSequence")
     @Column(name = "id")
     private Long id;
 
@@ -22,6 +24,7 @@ public class Endereco implements Serializable {
     @Column(name = "numero")
     private String numero;
 
+    @NotNull
     @Column(name = "cidade")
     private String cidade;
 
