@@ -2,8 +2,6 @@ package com.rodrigo.vendas.domain;
 
 import com.rodrigo.vendas.domain.enumeration.Sexo;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,26 +21,20 @@ public abstract class Pessoa implements Serializable {
     @Column(name = "id")
     protected Long id;
 
-    @NotNull
-    @NotEmpty(message = "Campo NOME é obrigatório!")
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     protected String nome;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "sexo")
+    @Column(name = "sexo", nullable = false)
     protected Sexo sexo;
 
-    @NotNull
-    @Column(name = "telefone")
+    @Column(name = "telefone", nullable = false)
     protected String telefone;
 
-    @NotNull
-    @Column(name = "cpf_cnpj")
+    @Column(name = "cpf_cnpj", nullable = false)
     protected String cpfEcnpj;
 
-    @NotNull
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
+    @JoinColumn(name = "endereco_id", nullable = false)
     protected Endereco endereco;
 }

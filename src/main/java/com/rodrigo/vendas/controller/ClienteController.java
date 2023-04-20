@@ -3,6 +3,7 @@ package com.rodrigo.vendas.controller;
 import com.rodrigo.vendas.service.ClienteService;
 import com.rodrigo.vendas.service.dto.ClienteDTO;
 import com.rodrigo.vendas.service.dto.ClienteFiltroDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteDTO> save(@RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> save(@RequestBody @Valid ClienteDTO clienteDTO) {
         log.info("Solicitação REST para salvar Cliente {}", clienteDTO);
 
         ClienteDTO result = clienteService.save(clienteDTO);
@@ -55,7 +56,7 @@ public class ClienteController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Void> updadeCliente(@PathVariable(value = "id") Long id, @RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<Void> updadeCliente(@PathVariable(value = "id") Long id, @RequestBody @Valid ClienteDTO clienteDTO) {
         log.info("Solicitação REST para atualizar cliente");
 
         clienteService.updateCliente(id, clienteDTO);

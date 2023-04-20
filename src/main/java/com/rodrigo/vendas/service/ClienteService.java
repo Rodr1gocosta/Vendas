@@ -23,9 +23,9 @@ public class ClienteService {
     private final ClienteMapper clienteMapper;
 
     public ClienteDTO save(ClienteDTO clienteDTO) {
-        Cliente cliente = clienteMapper.toEntity(clienteDTO);
+        Cliente cliente = mapperToEntity(clienteDTO);
         Cliente result = clienteRepository.save(cliente);
-        return clienteMapper.toDto(result);
+        return mapperToDto(result);
     }
 
     @Transactional(readOnly = true)

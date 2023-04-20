@@ -1,0 +1,16 @@
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/domain/enumeration/Sexo.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/domain/enumeration/TipoPessoa.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/service/ClienteService.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/domain/Pessoa.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/controller/rest_erro/ApiErrors.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/service/mapper/ClienteMapper.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/VendasApplication.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/domain/Endereco.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/domain/Cliente.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/repository/ClienteRepository.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/service/dto/ClienteFiltroDTO.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/controller/rest_erro/ApplicationControllerAdvice.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/service/dto/ClienteDTO.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/service/mapper/EntityMapper.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/controller/ClienteController.java
+/home/basis/Projetos Pessoal/Vendas/src/main/java/com/rodrigo/vendas/exception/ClienteException.java
